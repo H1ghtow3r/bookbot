@@ -20,16 +20,16 @@ def sort_on(items):
     return items["num"]
 
 
-def get_sorted_dict(items):
-    list_of_char_dictionaries = []
+def chars_dict_to_sorted_list(num_chars_dict):
+    sorted_list = []
 
-    for item in items:
+    for item in num_chars_dict:
         if (item.isalpha()):    
-            char_dict = {"char": item, "num": items[item]}
-            list_of_char_dictionaries.append(char_dict)
+            char_dict = {"char": item, "num": num_chars_dict[item]}
+            sorted_list.append(char_dict)
     
-    list_of_char_dictionaries.sort(reverse=True, key=sort_on)
+    sorted_list.sort(reverse=True, key=sort_on)
     
-    return list_of_char_dictionaries
+    return sorted_list
 
 
