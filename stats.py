@@ -14,3 +14,22 @@ def get_chars_dict(text):
             counts[lowered] = 1
     
     return counts
+
+
+def sort_on(items):
+    return items["num"]
+
+
+def get_sorted_dict(items):
+    list_of_char_dictionaries = []
+
+    for item in items:
+        if (item.isalpha()):    
+            char_dict = {"char": item, "num": items[item]}
+            list_of_char_dictionaries.append(char_dict)
+    
+    list_of_char_dictionaries.sort(reverse=True, key=sort_on)
+    
+    return list_of_char_dictionaries
+
+
